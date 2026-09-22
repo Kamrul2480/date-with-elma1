@@ -111,9 +111,35 @@ confirmDateBtn.addEventListener("click", () => {
   const dt = new Date(selectedDate);
   const formattedDate = dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
-  datePickerContainer.classList.add("hidden");
-  message.textContent = `See you on ${formattedDate} at ${selectedTime}! 💕✨`;
-  burstHearts(25);
+  // Formspree-তে ডাটা ইমেইল হিসেবে পাঠানোর লজিক
+  const formspreeEndpoint = "YOUR_FORMSPREE_ENDPOINT_HERE"; // এখানে আপনার Formspree URL বসাবেন
+
+  confirmDateBtn.disabled = true;
+  confirmDateBtn.textContent = "Sending... 💌";
+
+  fetch(formspreeEndpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      recipient: "Elma",
+      date: formattedDate,
+      time: selectedTime,
+      response: "YES! Date Confirmed ❤️"
+    })
+  })
+  .then(response => {
+    datePickerContainer.classList.add("hidden");
+    message.textContent = `See you on ${formattedDate} at ${selectedTime}! 💕✨`;
+    burstHearts(25);
+  })
+  .catch(error => {
+    datePickerContainer.classList.add("hidden");
+    message.textContent = `See you on ${formattedDate} at ${selectedTime}! 💕✨`;
+    burstHearts(25);
+  });
 });
 
 function dodgeNoButton(e) {
