@@ -123,7 +123,7 @@ confirmDateBtn.addEventListener("click", () => {
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
-    body: JSON.stringify({
+   body: JSON.stringify({
       recipient: "Elma",
       date: formattedDate,
       time: selectedTime,
