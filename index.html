@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal Website ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <div class="emoji" id="emoji">💌</div>
+      <div class="page-count" id="pageCount">1 / 5</div>
+      <h1 id="question">Hi Elma, can I tell you something?</h1>
+      <p class="subtext" id="subtext">Just one little question... 😊</p>
+
+      <div class="buttons" id="buttons">
+        <button class="yes" id="yesBtn">Yes ❤️</button>
+        <button class="no" id="noBtn">No 🙈</button>
+      </div>
+
+      <!-- Date & Time Section (English) -->
+      <div class="date-picker-container hidden" id="datePickerContainer">
+        <label for="dateInput">Select Date:</label>
+        <input type="date" id="dateInput" class="picker-input">
+
+        <label for="timeSelect">Select Time:</label>
+        <select id="timeSelect" class="picker-input">
+          <option value="">Pick a time... ⏰</option>
+          <option value="12:00 PM">12:00 PM (Noon)</option>
+          <option value="01:00 PM">01:00 PM (Afternoon)</option>
+          <option value="02:00 PM">02:00 PM (Afternoon)</option>
+          <option value="03:00 PM">03:00 PM (Afternoon)</option>
+          <option value="04:00 PM">04:00 PM (Afternoon)</option>
+          <option value="05:00 PM">05:00 PM (Evening)</option>
+          <option value="06:00 PM">06:00 PM (Evening)</option>
+          <option value="07:00 PM">07:00 PM (Evening)</option>
+          <option value="08:00 PM">08:00 PM (Night)</option>
+          <option value="09:00 PM">09:00 PM (Night)</option>
+        </select>
+
+        <button id="confirmDateBtn" class="yes confirm-btn">Confirm Date ❤️</button>
+      </div>
+
+      <p class="message" id="message"></p>
+      
+      <!-- Footer -->
+      <p class="custom-credit">Coded line by line with ❤️ by KAMRUL only for Elma</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
