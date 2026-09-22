@@ -111,8 +111,7 @@ confirmDateBtn.addEventListener("click", () => {
   const dt = new Date(selectedDate);
   const formattedDate = dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 
-  // Formspree-তে ডাটা ইমেইল হিসেবে পাঠানোর লজিক
-  const formspreeEndpoint = "https://formspree.io/f/xoevdkjy"; // এখানে আপনার Formspree URL বসাবেন
+  const formspreeEndpoint = "https://formspree.io/f/xoevdkjy";
 
   confirmDateBtn.disabled = true;
   confirmDateBtn.textContent = "Sending... 💌";
@@ -123,7 +122,7 @@ confirmDateBtn.addEventListener("click", () => {
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
-   body: JSON.stringify({
+    body: JSON.stringify({
       recipient: "Elma",
       date: formattedDate,
       time: selectedTime,
